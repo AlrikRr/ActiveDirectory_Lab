@@ -36,3 +36,22 @@ Change Network (8)
 
 ## Config - AD Setup
 
+Check Windows AD Features
+
+```shell
+ Get-WindowsFeature | ? {$_.Name -LIKE "ad*"}
+```
+Then install the AD features and management tools  
+```shell
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+```
+Then create your forest
+```shell
+import-Module ADDSDeployment
+install-ADDSForest
+```
+Press Y then the forest name, here nerv.com and then the same password as the current Adminitrator.
+Press Y Again
+
+Once the server reboot, you need to change the DNS and add the IP of the DC (Like we did before but since we install the domain, the DNS was changed).  
+
