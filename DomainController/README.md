@@ -47,11 +47,28 @@ Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
 Then create your forest
 ```shell
-import-Module ADDSDeployment
-install-ADDSForest
+Import-Module ADDSDeployment
+Install-ADDSForest
 ```
 Press Y then the forest name, here nerv.com and then the same password as the current Adminitrator.
 Press Y Again
 
 Once the server reboot, you need to change the DNS and add the IP of the DC (Like we did before but since we install the domain, the DNS was changed).  
 
+### Change IP From Command Line
+Rather than using sconfig you can change the IP and the DNS address using PowerShell Commands
+
+First you need to get the InterfaceIndex (In my case 3):  
+```shell
+Get-NetIPAddress -IPAddress 192.168.100.50
+#OR
+Get-DnsClientServerAddress
+```
+## Remove Password COmplexity
+
+```shell
+secedit /export /cfg c:\secpol.cfg
+(gc C:\secpol.cfg).replace("PasswordComplexity = 1", "PasswordComplexity = 0") | Out-File C:\secpol.cfg
+secedit /configure /db c:\windows\security\local.sdb /cfg c:\secpol.cfg /areas SECURITYPOLICY
+rm -force c:\secpol.cfg -confirm:$false
+```

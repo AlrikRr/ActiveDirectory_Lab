@@ -13,7 +13,7 @@ Set-Item WSMan:localhost\client\trustedhosts -Value 192.168.100.50
 ```
 Next, start a new session using:  
 ```shell
-New-PSSession -COmputerName 192.168.100.50 -Credential (Get-Credential)
+New-PSSession -ComputerName 192.168.100.50 -Credential (Get-Credential)
 Enter-PSSession <ID>
 ```
 

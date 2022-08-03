@@ -1,0 +1,34 @@
+{
+	"domain":"nerv.com",
+	"groups":[
+				{
+					"name":"Financial",
+					"name":"Engineering",
+					"name":"Employees",
+					"name":"Management"
+				}
+			],
+	"users":[
+		{
+			"first_name":"Adrien",
+			"last_name":"Lazall",
+			"password":"Passw0rd!",
+			"groups":[
+				"Financial",
+				"Employees"
+			]	
+		},		
+		{
+			"first_name":"Jennifer",
+			"last_name":"Homes",
+			"password":"ToNG*658",
+			"groups":[
+				"Employees",
+				"Management"
+			]	
+		}
+
+	]
+
+
+}

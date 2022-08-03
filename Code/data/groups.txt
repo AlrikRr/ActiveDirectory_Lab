@@ -1,0 +1,12 @@
+Employees
+Management
+Engineers
+Researchers
+Sales
+Student
+Developpers
+Financial
+Intern
+Extern
+Lawyers
+Marketing
