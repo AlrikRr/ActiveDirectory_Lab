@@ -41,11 +41,13 @@ for ($i = 0; $i -lt $max_users ; $i++){
     $Random_Firstname = (Get-Random -InputObject $first_names).Trim()
     $Random_Lastname = (Get-Random -InputObject $last_names).Trim()
     $Random_Group = (Get-Random -InputObject $group_list.name)
+    $SamAccountName = $Random_Firstname.ToLower() + "." + $Random_Lastname.ToLower()
 
     $new_user = @{
         "first_name"="$Random_Firstname"
         "last_name"="$Random_Lastname"
         "password"="$Random_Password"
+        "samaccount"="$SamAccountName"
         "groups" = @($Random_Group)
     }
 

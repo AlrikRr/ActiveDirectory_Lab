@@ -17,3 +17,5 @@ Or you can use this command :
 ```shell
 Add-Computer -DomainName nerv.com -Credential nerv\Administrateur -Force -Restart
 ```
+
+Take a snapshot of the DC01 and the WS01 once it is joined BEFORE adding the random users
