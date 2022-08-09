@@ -10,3 +10,8 @@ $dc = New-PSSession 192.168.100.50 -Credential (Get-Credential)
  Copy-Item .\Code\base.json -ToSession $dc C:\Users\Administrateur\Documents\CODE
 
 ```
+
+## Data
+
+All the files related to the user generation are stored inside `\data`.  
+This folder contains list of firstnames, lastnames, groups & passwords (From rockyou.txt)  
